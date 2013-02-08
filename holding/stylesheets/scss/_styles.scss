@@ -1,0 +1,100 @@
+@import "bourbon";
+
+$type-serif-headings: "chaparral-pro-display", "Comic Sans";
+$type-serif-body:     "chaparral-pro-caption";
+$type-sans:           "proxima-nova-condensed";
+
+%wrapper {
+  margin: 0 auto;
+  width: 60%;
+  max-width: 1000px;
+}
+
+#border {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border: solid 10px rgba(0,0,0,0.1);
+  z-index: -1;
+}
+
+em {
+  font-style: italic;
+}
+
+html {
+  background: #fff;
+}
+
+figure img {
+  max-width: 100%;
+  display: block;
+}
+
+body > main,
+body > header > * {
+  @extend %wrapper;
+}
+
+body > header {
+
+  h1 {
+    font-family: $type-serif-headings;
+    font-weight: 600;
+    font-size: 3.5em;
+    text-align: center;
+    padding: 8% 0 4%;
+  }
+}
+
+body > main {
+  font-family: $type-serif-body;
+  font-size: 1.25em;
+  max-width: 32em;
+  color: #333;
+  margin-top: 5%;
+  margin-bottom: 5%;
+
+  p {
+    line-height: 1.45;
+    margin: 1.45em 0;
+  }
+}
+
+form {
+  font-family: $type-sans;
+  margin-top: 10%;
+
+  h2 {
+    font-family: $type-serif-headings;
+    font-size: 1.4em;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+form fieldset {
+  legend {
+    display: block;
+  }
+}
+
+input {
+  font-family: $type-sans;
+
+  &[type='submit'] {
+    border: none;
+    background: #666;
+    color: white;
+    border-radius: 5px;
+    text-transform: uppercase;
+    line-height: 1;
+    padding: 10px;
+    font-size: .8125em;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      background: #111;
+    }
+  }
+}
