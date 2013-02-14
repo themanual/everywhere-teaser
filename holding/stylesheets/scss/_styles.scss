@@ -4,10 +4,29 @@ $type-serif-headings: "chaparral-pro-display", "Comic Sans";
 $type-serif-body:     "chaparral-pro-caption";
 $type-sans:           "proxima-nova-condensed";
 
-%wrapper {
+$break-medium:  750px;
+$break-small:   500px;
+
+.visuallyhidden { 
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0; 
+}
+
+.wrapper {
   margin: 0 auto;
-  width: 60%;
+  width: 70%;
   max-width: 1000px;
+
+  @media screen and (max-width: $break-medium) {
+    width: 80%;
+  }
+
+  @media screen and (max-width: $break-small) {
+    width: 87%;
+  }
 }
 
 #border {
@@ -15,6 +34,10 @@ $type-sans:           "proxima-nova-condensed";
   top: 0; left: 0; right: 0; bottom: 0;
   border: solid 10px rgba(0,0,0,0.1);
   z-index: -1;
+
+  @media screen and (max-width: $break-small) {
+    border-width: 5px;
+  }
 }
 
 em {
@@ -28,31 +51,58 @@ html {
 figure img {
   max-width: 100%;
   display: block;
+  margin: 0 auto;
+}
+
+body {
+  font-size: 16px;
+
+  @media screen and (max-width: $break-medium) {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: $break-small) {
+    font-size: 13px;
+  }
 }
 
 body > main,
 body > header > * {
-  @extend %wrapper;
+  @extend .wrapper;
 }
 
 body > header {
 
   h1 {
-    font-family: $type-serif-headings;
-    font-weight: 600;
+    font-family: $type-sans;
+    font-weight: 400;
     font-size: 3.5em;
     text-align: center;
-    padding: 8% 0 4%;
+    padding: 10% 0 6%;
+    font-weight: 600;
+
+    @media screen and (max-width: $break-medium) {
+      font-size: 3em;
+      padding: 12% 0 8%;
+    }
+
+    @media screen and (max-width: $break-small) {
+      font-size: 2em;
+    }
+  }
+
+  em {
+    font-style: normal;
   }
 }
 
 body > main {
   font-family: $type-serif-body;
-  font-size: 1.25em;
+  font-size: 1.27em;
   max-width: 32em;
   color: #333;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  padding-top: 1%;
+  padding-bottom: 5%;
 
   p {
     line-height: 1.45;
@@ -62,13 +112,26 @@ body > main {
 
 form {
   font-family: $type-sans;
-  margin-top: 10%;
+  padding-top: 5%;
+
+  label {
+    @extend .visuallyhidden;
+  }
 
   h2 {
-    font-family: $type-serif-headings;
-    font-size: 1.4em;
+    font-family: $type-sans;
+    font-size: 1.25em;
     font-weight: 600;
     text-align: center;
+    text-transform: uppercase;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  input {
+    @include inline-block;
   }
 }
 
@@ -80,6 +143,9 @@ form fieldset {
 
 input {
   font-family: $type-sans;
+  -webkit-appearance: none;
+  border-radius: 0px;
+  font-size: .8125em;
 
   &[type='submit'] {
     border: none;
@@ -89,12 +155,46 @@ input {
     text-transform: uppercase;
     line-height: 1;
     padding: 10px;
-    font-size: .8125em;
 
     &:hover,
     &:focus {
       outline: none;
       background: #111;
     }
+
+    @media screen and (max-width: $break-small) {
+      font-weight: 600;
+    }
+  }
+
+  &.email {
+    background: none;
+    border: none;
+    border-bottom: solid 2px #ccc;
+    line-height: 1;
+    padding: 8px 4px;
+    outline: none;
+    width: 10em;
+
+    &:hover,
+    &:focus {
+      border-bottom-color: #aaa;
+    }
+  }
+
+  &.error {
+    border-bottom-color: #EF3E42 !important;
+  }
+
+  &.placeholder {
+    color: #999;
+  }
+
+  + input {
+    margin-left: 10px;
+  }
+
+  @media screen and (max-width: $break-medium) {
+    font-size: 0.94em;
   }
 }
