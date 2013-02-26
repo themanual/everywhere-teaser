@@ -1,0 +1,38 @@
+// Image replacement
+// (from H5BP)
+%ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+
+    &:before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 150%;
+    }
+}
+
+// Browsers:      HIDDEN
+// Screenreaders: HIDDEN
+// (from H5BP)
+%hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+// Browsers:      HIDDEN
+// Screenreaders: VISIBLE
+// (from H5BP)
+%visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}

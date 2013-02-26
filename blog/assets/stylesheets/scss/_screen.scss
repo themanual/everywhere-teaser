@@ -1,0 +1,177 @@
+@import "bourbon";
+
+/*
+html { -webkit-tap-highlight-color: rgba(0,0,0,0); }
+::-moz-selection  { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection       { background: #fe57a1; color: #fff; text-shadow: none; }
+*/
+
+$type-sans: "cronos-pro-display";
+$type-serif: "minion-pro";
+
+$sidebar-width: 150px;
+$color-issue-red: #EF3E42;
+$color-issue-blue: #52BAE1;
+$color-issue-yellow: #FFBF00;
+
+$color-current: $color-issue-red;
+
+html, body {
+  background: hsl(60,18%,95%);
+}
+
+body {
+  @include clearfix;
+}
+
+h1, h2, h3, h4 {
+  font-family: $type-sans;
+}
+
+p {
+  font-family: $type-serif;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: $color-current;
+  &:hover {
+    color: #000;
+  }
+}
+
+aside, main {
+  float: left;
+}
+
+main {
+  font-size: 22px;
+  background: #fff;
+}
+
+main {
+  @include box-sizing(border-box);
+  border-left: solid 6px $color-current;
+  width: 70%;
+  padding: 0em 6% 4em 14%;
+}
+
+aside {
+  @include box-sizing(border-box);
+  width: 30%;
+  padding: 14em 4% 0;
+  max-width: 22em;
+}
+
+main > header {
+  font-family: $type-sans;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  word-spacing: 0.25em;
+  font-size: 1em;
+  font-weight: 600;
+  margin: 5em 0 4.5em;
+  color: $color-current;
+  text-align: left;
+}
+
+article h1 {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: hsl(0, 0%, 20%);
+}
+
+main p {
+  line-height: 1.55;
+  margin: 1.55em 0;
+  color: hsl(0, 0%, 25%);
+  text-align: justify;
+  @include prefixer(hyphens, auto, webkit moz ms spec);
+}
+
+article footer > p {
+  width: 30%;
+  margin-right: 5%;
+  float: left;
+  font-size: 19px;
+  padding-top: 0.3em;
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+
+  em {
+    display: block;
+    font-weight: 600;
+    font-family: $type-sans;
+    font-style: normal;
+  }
+
+  > *:first-child {
+    margin-top: 0px;
+  }
+
+  > p {
+    color: rgba(0,0,0,0.5);
+    line-height: 1.2;
+    margin: 0;
+    margin-bottom: 1.2em;
+  }
+}
+
+aside {
+  color: hsla(60,11%,34%, 1);
+  font-size: 17px;
+  line-height: 1.5;
+
+  strong {
+    font-weight: 600;
+  }
+
+  li {
+    line-height: 1.6em;
+  }
+
+  a {
+    font-weight: 600;
+  }
+}
+
+aside a.buy {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  display: inline-block;
+  margin-top: 0.7em;
+}
+
+aside .newsletter .subscribe-button-inner {
+  margin-top: 0.6em !important;
+}
+
+aside > div {
+  margin-bottom: 3em;
+}
+
+aside p,
+aside li {
+  font-family: $type-sans;
+}
+
+aside h2 {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  margin-bottom: 0.6em;
+}
