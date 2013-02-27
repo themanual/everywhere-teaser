@@ -61,7 +61,7 @@ main {
   @include box-sizing(border-box);
   border-left: solid 6px $color-current;
   width: 70%;
-  padding: 0em 6% 4em 14%;
+  padding: 0em 6% 4em 6%;
 }
 
 aside {
@@ -97,16 +97,19 @@ main p {
   @include prefixer(hyphens, auto, webkit moz ms spec);
 }
 
-article footer > p {
-  width: 30%;
-  margin-right: 5%;
-  float: left;
-  font-size: 19px;
-  padding-top: 0.3em;
-
-  &:nth-child(3n) {
-    margin-right: 0;
+article {
+  > footer {
+    float: left;
+    width: 5em;
   }
+
+  > header,
+  > .main {
+    margin-left: 7em;
+  }
+}
+
+article footer > p {
 
   em {
     display: block;
@@ -159,7 +162,7 @@ aside .newsletter .subscribe-button-inner {
   margin-top: 0.6em !important;
 }
 
-aside > div {
+aside > * {
   margin-bottom: 3em;
 }
 
