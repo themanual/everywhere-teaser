@@ -223,7 +223,7 @@ aside {
 
 aside a.buy {
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 16px;
   letter-spacing: 1px;
   word-spacing: 2px;
@@ -241,7 +241,7 @@ aside li {
   font-family: "cronos-pro-display"; }
 
 aside h2 {
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
   word-spacing: 2px;
