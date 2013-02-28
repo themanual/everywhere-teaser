@@ -3,8 +3,9 @@
 $type-sans: "cronos-pro-display";
 $type-serif: "minion-pro";
 
-$break-medium:  750px;
-$break-small:   500px;
+$break-medium:    800px;
+$break-small:     500px;
+$break-x-small:   400px;
 
 .visuallyhidden { 
   position: absolute; 
@@ -42,6 +43,20 @@ figure img {
   margin: 0 auto;
 }
 
+body > figure {
+  background: #666;
+  width: 100%;
+  padding-bottom: 35%;
+
+  @media screen and (orientation: portrait) {
+    padding-bottom: 70%;
+  }
+
+  @media screen and (max-aspect-ratio: 9/11) {
+    padding-bottom: 90%;
+  }
+}
+
 
 
 
@@ -52,6 +67,10 @@ figure img {
 body > main,
 body > header > * {
   @extend .wrapper;
+}
+
+body > main {
+  padding: 0 1.5em 2.5em;
 }
 
 
@@ -86,6 +105,7 @@ h1, h2 {
   font-family: $type-sans;
   text-align: center;
   font-weight: 600;
+  line-height: 1.2;
 }
 
 h1 {
@@ -95,7 +115,7 @@ h1 {
 
 h2 {
   font-size: 1.2em;
-  margin-bottom: 1em;
+  padding: 2em 0 1em;
 }
 
 p {
@@ -108,7 +128,6 @@ p {
 
 form {
   font-family: $type-sans;
-  padding: 3.5em 0 4.5em;
 
   label {
     @extend .visuallyhidden;
@@ -153,10 +172,6 @@ input {
       outline: none;
       background: #666666;
     }
-
-    @media screen and (max-width: $break-small) {
-      font-weight: 600;
-    }
   }
 
   &.email {
@@ -185,9 +200,5 @@ input {
 
   + input {
     margin-left: 10px;
-  }
-
-  @media screen and (max-width: $break-medium) {
-    font-size: 0.94em;
   }
 }
