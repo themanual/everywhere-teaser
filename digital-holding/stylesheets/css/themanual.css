@@ -126,86 +126,60 @@ textarea {
 .wrapper, body > main,
 body > header > * {
   margin: 0 auto;
-  width: 70%;
-  max-width: 1000px; }
-  @media screen and (max-width: 750px) {
-    .wrapper, body > main,
-    body > header > * {
-      width: 80%; } }
-  @media screen and (max-width: 500px) {
-    .wrapper, body > main,
-    body > header > * {
-      width: 87%; } }
+  max-width: 22em; }
 
-#border {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: solid 10px rgba(0, 0, 0, 0.1);
-  z-index: -1; }
-  @media screen and (max-width: 500px) {
-    #border {
-      border-width: 5px; } }
+html {
+  background: #fff; }
 
 em {
   font-style: italic; }
 
-html {
-  background: #fff; }
+strong {
+  font-weight: 700; }
 
 figure img {
   max-width: 100%;
   display: block;
   margin: 0 auto; }
 
+/* LAYOUT */
+/* TYPE */
 body {
-  font-size: 16px; }
-  @media screen and (max-width: 750px) {
-    body {
-      font-size: 14px; } }
-  @media screen and (max-width: 500px) {
-    body {
-      font-size: 13px; } }
+  font-size: 24px;
+  font-family: "minion-pro";
+  color: #999; }
 
-body > header h1 {
-  font-family: "proxima-nova-condensed";
-  font-weight: 400;
-  font-size: 3.5em;
+a {
+  color: #666666;
+  text-decoration: none;
+  font-weight: 700; }
+  a:hover, a:focus {
+    color: #000; }
+
+h1, h2 {
+  color: #52BAE1;
+  color: rgba(0, 0, 0, 0.7);
+  font-family: "cronos-pro-display";
   text-align: center;
-  padding: 10% 0 6%;
   font-weight: 600; }
-  @media screen and (max-width: 750px) {
-    body > header h1 {
-      font-size: 3em;
-      padding: 12% 0 8%; } }
-  @media screen and (max-width: 500px) {
-    body > header h1 {
-      font-size: 2em; } }
-body > header em {
-  font-style: normal; }
 
-body > main {
-  font-family: "chaparral-pro-caption";
-  font-size: 1.27em;
-  max-width: 32em;
-  color: #333;
-  padding-top: 1%;
-  padding-bottom: 5%; }
-  body > main p {
-    line-height: 1.45;
-    margin: 1.45em 0; }
+h1 {
+  font-size: 1.65em;
+  padding: 1.75em 0 1.5em; }
+
+h2 {
+  font-size: 1.2em;
+  margin-bottom: 1em; }
+
+p {
+  line-height: 1.5;
+  margin: 0 auto; }
+  p + p {
+    margin-top: 1.5em; }
 
 form {
-  font-family: "proxima-nova-condensed";
-  padding-top: 5%; }
-  form h2 {
-    font-family: "proxima-nova-condensed";
-    font-size: 1.25em;
-    font-weight: 600;
-    text-align: center;
-    text-transform: uppercase; }
+  font-family: "cronos-pro-display";
+  padding: 3.5em 0 4.5em; }
   form p {
     text-align: center; }
   form input {
@@ -219,21 +193,25 @@ form fieldset legend {
   display: block; }
 
 input {
-  font-family: "proxima-nova-condensed";
+  font-family: "cronos-pro-display";
   -webkit-appearance: none;
   border-radius: 0px;
   font-size: .8125em; }
   input[type='submit'] {
     border: none;
-    background: #666;
+    background: #B3B3B3;
     color: white;
     border-radius: 5px;
     text-transform: uppercase;
     line-height: 1;
-    padding: 10px; }
+    padding: 0.65em 0.8em 0.65em;
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
+    word-spacing: 0.1em;
+    font-weight: 600; }
     input[type='submit']:hover, input[type='submit']:focus {
       outline: none;
-      background: #111; }
+      background: #666666; }
     @media screen and (max-width: 500px) {
       input[type='submit'] {
         font-weight: 600; } }
@@ -244,13 +222,14 @@ input {
     line-height: 1;
     padding: 8px 4px;
     outline: none;
-    width: 10em; }
+    width: 12em;
+    color: #444; }
     input.email:hover, input.email:focus {
       border-bottom-color: #aaa; }
   input.error {
     border-bottom-color: #ef3e42 !important; }
   input.placeholder {
-    color: #999; }
+    color: #bbb; }
   input + input {
     margin-left: 10px; }
   @media screen and (max-width: 750px) {

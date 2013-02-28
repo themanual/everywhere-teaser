@@ -1,8 +1,7 @@
 @import "bourbon";
 
-$type-serif-headings: "chaparral-pro-display", "Comic Sans";
-$type-serif-body:     "chaparral-pro-caption";
-$type-sans:           "proxima-nova-condensed";
+$type-sans: "cronos-pro-display";
+$type-serif: "minion-pro";
 
 $break-medium:  750px;
 $break-small:   500px;
@@ -17,35 +16,24 @@ $break-small:   500px;
 
 .wrapper {
   margin: 0 auto;
-  width: 70%;
-  max-width: 1000px;
-
-  @media screen and (max-width: $break-medium) {
-    width: 80%;
-  }
-
-  @media screen and (max-width: $break-small) {
-    width: 87%;
-  }
+  max-width: 22em;
 }
 
-#border {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  border: solid 10px rgba(0,0,0,0.1);
-  z-index: -1;
 
-  @media screen and (max-width: $break-small) {
-    border-width: 5px;
-  }
+
+
+
+
+html {
+  background: #fff;
 }
 
 em {
   font-style: italic;
 }
 
-html {
-  background: #fff;
+strong {
+  font-weight: 700;
 }
 
 figure img {
@@ -54,76 +42,76 @@ figure img {
   margin: 0 auto;
 }
 
-body {
-  font-size: 16px;
 
-  @media screen and (max-width: $break-medium) {
-    font-size: 14px;
-  }
 
-  @media screen and (max-width: $break-small) {
-    font-size: 13px;
-  }
-}
 
+
+
+
+/* LAYOUT */
 body > main,
 body > header > * {
   @extend .wrapper;
 }
 
-body > header {
 
-  h1 {
-    font-family: $type-sans;
-    font-weight: 400;
-    font-size: 3.5em;
-    text-align: center;
-    padding: 10% 0 6%;
-    font-weight: 600;
 
-    @media screen and (max-width: $break-medium) {
-      font-size: 3em;
-      padding: 12% 0 8%;
-    }
 
-    @media screen and (max-width: $break-small) {
-      font-size: 2em;
-    }
-  }
 
-  em {
-    font-style: normal;
+
+
+
+
+/* TYPE */
+body {
+  font-size: 24px;
+  font-family: $type-serif;
+  color: #999;
+}
+
+a {
+  color: #666666;
+  text-decoration: none;
+  font-weight: 700;
+
+  &:hover,
+  &:focus {
+    color: #000;
   }
 }
 
-body > main {
-  font-family: $type-serif-body;
-  font-size: 1.27em;
-  max-width: 32em;
-  color: #333;
-  padding-top: 1%;
-  padding-bottom: 5%;
+h1, h2 {
+  color: #52BAE1;
+  color: rgba(0,0,0,0.7);
+  font-family: $type-sans;
+  text-align: center;
+  font-weight: 600;
+}
 
-  p {
-    line-height: 1.45;
-    margin: 1.45em 0;
+h1 {
+  font-size: 1.65em;
+  padding: 1.75em 0 1.5em;
+}
+
+h2 {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+p {
+  line-height: 1.5;
+  margin: 0 auto;
+  + p {
+    margin-top: 1.5em;
   }
 }
 
 form {
   font-family: $type-sans;
-  padding-top: 5%;
+  padding: 3.5em 0 4.5em;
 
   label {
     @extend .visuallyhidden;
-  }
-
-  h2 {
-    font-family: $type-sans;
-    font-size: 1.25em;
-    font-weight: 600;
-    text-align: center;
-    text-transform: uppercase;
   }
 
   p {
@@ -149,17 +137,21 @@ input {
 
   &[type='submit'] {
     border: none;
-    background: #666;
+    background: #B3B3B3;
     color: white;
     border-radius: 5px;
     text-transform: uppercase;
     line-height: 1;
-    padding: 10px;
+    padding: 0.65em 0.8em 0.65em;
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
+    word-spacing: 0.1em;
+    font-weight: 600;
 
     &:hover,
     &:focus {
       outline: none;
-      background: #111;
+      background: #666666;
     }
 
     @media screen and (max-width: $break-small) {
@@ -174,7 +166,8 @@ input {
     line-height: 1;
     padding: 8px 4px;
     outline: none;
-    width: 10em;
+    width: 12em;
+    color: #444;
 
     &:hover,
     &:focus {
@@ -187,7 +180,7 @@ input {
   }
 
   &.placeholder {
-    color: #999;
+    color: #bbb;
   }
 
   + input {

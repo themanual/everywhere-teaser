@@ -1,7 +1,7 @@
 // Placeholder stuff
 $("[data-placeholder]").each(function() {
 
-  if ($.trim($(this).data("placeholder")) == "") {
+  if ($.trim($(this).data("placeholder")) === "") {
     return true;
   }
 
@@ -9,14 +9,14 @@ $("[data-placeholder]").each(function() {
   $(this).on({
     focus: function() {
       var $input = $(this);
-      if ($input.val() == $input.data("placeholder")) {
+      if ($input.val() === $input.data("placeholder")) {
         $input.val("");
         $input.removeClass("placeholder");
       }
     },
     blur: function() {
       var $input = $(this);
-      if ($input.val() == "" || $input.val() == $input.data("placeholder")) {
+      if ($input.val() === "" || $input.val() === $input.data("placeholder")) {
         $input.val($input.data("placeholder"));
         $input.addClass("placeholder");
       }
@@ -30,7 +30,7 @@ $("[data-placeholder]").each(function() {
     // replace placeholder
     $form.find("[data-placeholder]").each(function() {
       var $input = $(this);
-      if ($input.val() == $input.data("placeholder")) {
+      if ($input.val() === $input.data("placeholder")) {
         $input.val("");
       }
     });
@@ -41,7 +41,7 @@ $("[data-placeholder]").each(function() {
       $form.serialize(),
       function (data) {
         if (data.Status === 400) {
-          $form.find("input.email").addClass("error");
+          $form.find("input.email").addClass("error").addClass("shake");
         } else { // 200
           $form.find("p").hide();
           $form.append('<p class="message">We’ve got you. Thanks for your interest.</p>');
