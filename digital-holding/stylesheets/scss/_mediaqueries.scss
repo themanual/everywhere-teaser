@@ -1,0 +1,50 @@
+@media screen and (max-width: $break-medium) {
+  body {
+    font-size: 20px;
+  }
+
+  h1 {
+    padding: 1.5em 0 1.25em;
+  }
+
+  form {
+    font-size: 23px;
+  }
+}
+
+@media screen and (max-width: $break-small) {
+  body {
+    font-size: 18px;
+  }
+
+  form {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: $break-x-small) {
+  
+  body {
+    font-size: 17px;
+  }
+
+  body > main {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  form input.email {
+    text-align: center;
+  }
+
+  form input[type='submit'] {
+    display: block;
+    margin: 0 auto;
+    margin-top: 1em;
+  }
+
+}
