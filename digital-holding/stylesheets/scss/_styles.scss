@@ -44,17 +44,16 @@ figure img {
 }
 
 body > figure {
-  background: #666;
-  width: 100%;
-  padding-bottom: 35%;
+  height: 650px;
+  margin-top: 1.5em;
+  background: #ccc;
 
-  @media screen and (orientation: portrait) {
-    padding-bottom: 70%;
-  }
-
-  @media screen and (max-aspect-ratio: 9/11) {
-    padding-bottom: 90%;
-  }
+  @media screen and (max-height: 950px) { height: 650px; }
+  @media screen and (max-height: 850px) { height: 550px; }
+  @media screen and (max-height: 750px) { height: 450px; }
+  @media screen and (max-height: 650px) { height: 350px; }
+  @media screen and (max-height: 500px) { height: 275px; }
+  @media screen and (max-height: 400px) { height: 250px; }
 }
 
 
@@ -190,10 +189,6 @@ input {
     }
   }
 
-  &.error {
-    border-bottom-color: #EF3E42 !important;
-  }
-
   &.placeholder {
     color: #bbb;
   }
@@ -201,4 +196,17 @@ input {
   + input {
     margin-left: 10px;
   }
+}
+
+form p.error {
+  input[type='text'] {
+    border-bottom-color: #EF3E42 !important;
+  }
+  input[type='email'] {
+    border-bottom-color: #EF3E42 !important;
+  }
+  input[type='submit'] {
+    background-color: #EF3E42 !important;
+  }
+
 }

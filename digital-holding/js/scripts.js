@@ -25,15 +25,8 @@ $("[data-placeholder]").each(function() {
 
   // AJAX Subscription Form
   $('#signup-form').submit(function (e) {
-    var $form = $(this);
 
-    // replace placeholder
-    $form.find("[data-placeholder]").each(function() {
-      var $input = $(this);
-      if ($input.val() === $input.data("placeholder")) {
-        $input.val("");
-      }
-    });
+    var $form = $(this);
 
     // submit request
     $.getJSON(
@@ -41,7 +34,14 @@ $("[data-placeholder]").each(function() {
       $form.serialize(),
       function (data) {
         if (data.Status === 400) {
-          $form.find("input.email").addClass("error").addClass("shake");
+          // Shake
+          var $p = $form.find("p");
+          $p.removeClass("shake").addClass("shake").addClass("error");
+          setTimeout(function() {
+            $p.removeClass("shake").removeClass("error");
+          }, 1000);
+
+          $form.find("input.email").addClass("error");
         } else { // 200
           $form.find("p").hide();
           $form.append('<p class="message">We’ve got you. Thanks for your interest.</p>');

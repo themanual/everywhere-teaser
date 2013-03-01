@@ -23,8 +23,6 @@
 }
 
 .shake {
-  -webkit-animation-name: shake;
-  -moz-animation-name: shake;
-  -o-animation-name: shake;
-  animation-name: shake;
+  @include prefixer(animation-name, shake, webkit moz o spec);
+  @include prefixer(animation-duration, 1s, webkit moz o spec);
 }

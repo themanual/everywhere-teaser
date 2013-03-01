@@ -143,15 +143,27 @@ figure img {
   margin: 0 auto; }
 
 body > figure {
-  background: #666;
-  width: 100%;
-  padding-bottom: 35%; }
-  @media screen and (orientation: portrait) {
+  height: 650px;
+  margin-top: 1.5em;
+  background: #ccc; }
+  @media screen and (max-height: 950px) {
     body > figure {
-      padding-bottom: 70%; } }
-  @media screen and (max-aspect-ratio: 9 / 11) {
+      height: 650px; } }
+  @media screen and (max-height: 850px) {
     body > figure {
-      padding-bottom: 90%; } }
+      height: 550px; } }
+  @media screen and (max-height: 750px) {
+    body > figure {
+      height: 450px; } }
+  @media screen and (max-height: 650px) {
+    body > figure {
+      height: 350px; } }
+  @media screen and (max-height: 500px) {
+    body > figure {
+      height: 275px; } }
+  @media screen and (max-height: 400px) {
+    body > figure {
+      height: 250px; } }
 
 /* LAYOUT */
 body > main {
@@ -237,12 +249,17 @@ input {
     color: #444; }
     input.email:hover, input.email:focus {
       border-bottom-color: #aaa; }
-  input.error {
-    border-bottom-color: #ef3e42 !important; }
   input.placeholder {
     color: #bbb; }
   input + input {
     margin-left: 10px; }
+
+form p.error input[type='text'] {
+  border-bottom-color: #ef3e42 !important; }
+form p.error input[type='email'] {
+  border-bottom-color: #ef3e42 !important; }
+form p.error input[type='submit'] {
+  background-color: #ef3e42 !important; }
 
 @media screen and (max-width: 800px) {
   body {
@@ -268,7 +285,8 @@ input {
     padding-right: 1em; }
 
   h1 {
-    font-size: 1.5em; }
+    font-size: 1.5em;
+    padding: 1.25em 0 1em; }
 
   form input.email {
     text-align: center; }
@@ -277,3 +295,52 @@ input {
     display: block;
     margin: 0 auto;
     margin-top: 1em; } }
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateX(10px); } }
+
+@-moz-keyframes shake {
+  0%, 100% {
+    -moz-transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -moz-transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    -moz-transform: translateX(10px); } }
+
+@-o-keyframes shake {
+  0%, 100% {
+    -o-transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -o-transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    -o-transform: translateX(10px); } }
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px); } }
+
+.shake {
+  -webkit-animation-name: shake;
+  -moz-animation-name: shake;
+  -o-animation-name: shake;
+  animation-name: shake;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s; }
