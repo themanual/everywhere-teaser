@@ -1,3 +1,4 @@
+/* Reset Stylesheet*/
 /* HTML5 Elements */
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, main {
   display: block; }
@@ -113,6 +114,7 @@ textarea {
   overflow: auto;
   vertical-align: top; }
 
+/* Basic Styles */
 .visuallyhidden, form label {
   position: absolute;
   overflow: hidden;
@@ -123,13 +125,16 @@ textarea {
   padding: 0;
   border: 0; }
 
-.wrapper, body > main,
-body > header > * {
+.wrapper, body > main {
   margin: 0 auto;
   max-width: 22em; }
 
 html {
+  height: 100%;
   background: #fff; }
+
+body {
+  height: 100%; }
 
 em {
   font-style: italic; }
@@ -137,33 +142,37 @@ em {
 strong {
   font-weight: 700; }
 
-figure img {
-  max-width: 100%;
-  display: block;
-  margin: 0 auto; }
-
-body > figure {
-  height: 650px;
+#illustration {
   margin-top: 1.5em;
-  background: #ccc; }
-  @media screen and (max-height: 950px) {
-    body > figure {
-      height: 650px; } }
-  @media screen and (max-height: 850px) {
-    body > figure {
-      height: 550px; } }
-  @media screen and (max-height: 750px) {
-    body > figure {
-      height: 450px; } }
-  @media screen and (max-height: 650px) {
-    body > figure {
-      height: 350px; } }
-  @media screen and (max-height: 500px) {
-    body > figure {
-      height: 275px; } }
-  @media screen and (max-height: 400px) {
-    body > figure {
-      height: 250px; } }
+  max-height: 650px;
+  height: 60%;
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  background-position: 190% 0, -240% 0, 110% 0;
+  background-image: url("../../img/compositions/desktop/blue.png"), url("../../img/compositions/desktop/yellow.png"), url("../../img/compositions/desktop/red.png"); }
+  .no-backgroundsize #illustration {
+    margin-top: 0; }
+  .no-multiplebgs #illustration {
+    background: url("../../img/compositions/desktop.png") bottom center; }
+
+.touch #illustration {
+  /* PHONE ILLUSTRATIONS */
+  /* TABLET ILLUSTRATIONS */ }
+  @media screen and (orientation: portrait) {
+    .touch #illustration {
+      height: 43%; } }
+  @media screen and (orientation: portrait) and (max-width: 550px) {
+    .touch #illustration {
+      background-image: url("../../img/compositions/phone/blue.png"), url("../../img/compositions/phone/yellow.png"), url("../../img/compositions/phone/red.png"); } }
+  @media screen and (orientation: landscape) and (max-height: 550px) {
+    .touch #illustration {
+      background-image: url("../../img/compositions/phone/blue.png"), url("../../img/compositions/phone/yellow.png"), url("../../img/compositions/phone/red.png"); } }
+  @media screen and (orientation: portrait) and (min-width: 551px) {
+    .touch #illustration {
+      background-image: url("../../img/compositions/tablet/blue.png"), url("../../img/compositions/tablet/yellow.png"), url("../../img/compositions/tablet/red.png"); } }
+  @media screen and (orientation: landscape) and (min-height: 551px) {
+    .touch #illustration {
+      background-image: url("../../img/compositions/tablet/blue.png"), url("../../img/compositions/tablet/yellow.png"), url("../../img/compositions/tablet/red.png"); } }
 
 /* LAYOUT */
 body > main {
@@ -172,7 +181,7 @@ body > main {
 /* TYPE */
 body {
   font-size: 24px;
-  font-family: "minion-pro";
+  font-family: "minion-pro", serif;
   color: #999; }
 
 a {
@@ -185,7 +194,7 @@ a {
 h1, h2 {
   color: #52BAE1;
   color: rgba(0, 0, 0, 0.7);
-  font-family: "cronos-pro-display";
+  font-family: "cronos-pro-display", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   text-align: center;
   font-weight: 600;
   line-height: 1.2; }
@@ -205,7 +214,7 @@ p {
     margin-top: 1.5em; }
 
 form {
-  font-family: "cronos-pro-display"; }
+  font-family: "cronos-pro-display", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
   form p {
     text-align: center; }
   form input {
@@ -219,7 +228,7 @@ form fieldset legend {
   display: block; }
 
 input {
-  font-family: "cronos-pro-display";
+  font-family: "cronos-pro-display", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   -webkit-appearance: none;
   border-radius: 0px;
   font-size: .8125em; }
@@ -261,6 +270,7 @@ form p.error input[type='email'] {
 form p.error input[type='submit'] {
   background-color: #ef3e42 !important; }
 
+/* Some extra media queries  */
 @media screen and (max-width: 800px) {
   body {
     font-size: 20px; }
@@ -295,6 +305,7 @@ form p.error input[type='submit'] {
     display: block;
     margin: 0 auto;
     margin-top: 1em; } }
+/* Taken from Animate.css  */
 @-webkit-keyframes shake {
   0%, 100% {
     -webkit-transform: translateX(0); }

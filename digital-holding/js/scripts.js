@@ -44,7 +44,7 @@ $("[data-placeholder]").each(function() {
           $form.find("input.email").addClass("error");
         } else { // 200
           $form.find("p").hide();
-          $form.append('<p class="message">We’ve got you. Thanks for your interest.</p>');
+          $form.prepend('<p class="message">We’ve got you. Thanks for your interest.</p>');
         }
       });
 

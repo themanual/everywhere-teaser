@@ -1,7 +1,7 @@
 @import "bourbon";
 
-$type-sans: "cronos-pro-display";
-$type-serif: "minion-pro";
+$type-sans: "cronos-pro-display", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$type-serif: "minion-pro", serif;
 
 $break-medium:    800px;
 $break-small:     500px;
@@ -21,12 +21,13 @@ $break-x-small:   400px;
 }
 
 
-
-
-
-
 html {
+  height: 100%;
   background: #fff;
+}
+
+body {
+  height: 100%;
 }
 
 em {
@@ -37,34 +38,56 @@ strong {
   font-weight: 700;
 }
 
-figure img {
-  max-width: 100%;
-  display: block;
-  margin: 0 auto;
+@mixin background-layers($size) {
+
+  background-image: url('../../img/compositions/#{$size}/blue.png'),
+                    url('../../img/compositions/#{$size}/yellow.png'),
+                    url('../../img/compositions/#{$size}/red.png');
 }
 
-body > figure {
-  height: 650px;
+#illustration {  
   margin-top: 1.5em;
-  background: #ccc;
+  max-height: 650px;
+  height: 60%;
 
-  @media screen and (max-height: 950px) { height: 650px; }
-  @media screen and (max-height: 850px) { height: 550px; }
-  @media screen and (max-height: 750px) { height: 450px; }
-  @media screen and (max-height: 650px) { height: 350px; }
-  @media screen and (max-height: 500px) { height: 275px; }
-  @media screen and (max-height: 400px) { height: 250px; }
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+
+  background-position:   190% 0,
+                        -240% 0,
+                         110% 0;
+  
+  @include background-layers(desktop);
+
+  .no-backgroundsize & {
+    margin-top: 0;
+  }
+
+  .no-multiplebgs & {
+    background: url('../../img/compositions/desktop.png') bottom center;
+  }
 }
 
+.touch #illustration {
+  
+  @media screen and (orientation: portrait) {
+    height: 43%;
+  }
 
-
+  /* PHONE ILLUSTRATIONS */
+  @media screen and (orientation:portrait)  and (max-width:  550px) { @include background-layers(phone); }
+  @media screen and (orientation:landscape) and (max-height: 550px) { @include background-layers(phone); }
+  
+  /* TABLET ILLUSTRATIONS */
+  @media screen and (orientation:portrait)  and (min-width:  551px) { @include background-layers(tablet); }
+  @media screen and (orientation:landscape) and (min-height: 551px) { @include background-layers(tablet); }
+}
 
 
 
 
 /* LAYOUT */
-body > main,
-body > header > * {
+body > main {
   @extend .wrapper;
 }
 
