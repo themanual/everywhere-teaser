@@ -205,6 +205,10 @@ input {
       outline: none;
       background: #666666;
     }
+
+    &.error {
+      background-color: #EF3E42 !important;
+    }
   }
 
   &.email {
@@ -221,6 +225,10 @@ input {
     &:focus {
       border-bottom-color: #aaa;
     }
+
+    &.error {
+      border-bottom-color: #EF3E42 !important;
+    }
   }
 
   &.placeholder {
@@ -230,17 +238,4 @@ input {
   + input {
     margin-left: 10px;
   }
-}
-
-form p.error {
-  input[type='text'] {
-    border-bottom-color: #EF3E42 !important;
-  }
-  input[type='email'] {
-    border-bottom-color: #EF3E42 !important;
-  }
-  input[type='submit'] {
-    background-color: #EF3E42 !important;
-  }
-
 }

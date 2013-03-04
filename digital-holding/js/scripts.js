@@ -27,6 +27,7 @@ $("[data-placeholder]").each(function() {
   $('#signup-form').submit(function (e) {
 
     var $form = $(this);
+    var timeout;
 
     // submit request
     $.getJSON(
@@ -34,14 +35,17 @@ $("[data-placeholder]").each(function() {
       $form.serialize(),
       function (data) {
         if (data.Status === 400) {
-          // Shake
-          var $p = $form.find("p");
-          $p.removeClass("shake").addClass("shake").addClass("error");
-          setTimeout(function() {
-            $p.removeClass("shake").removeClass("error");
-          }, 1000);
+          // Find the inputs
+          var $inputs = $form.find("p > *");          
+          // Clear previous timeout if existing
+          if (timeout) { clearTimeout(timeout); }
+          // Add the animations and error display
+          $inputs.removeClass("shake").addClass("shake error");
+          // Remove the animations
+          timeout = window.setTimeout(function() {
+            $inputs.removeClass("shake error");
+          }, 1100);
 
-          $form.find("input.email").addClass("error");
         } else { // 200
           $form.find("p").hide();
           $form.prepend('<p class="message">We’ve got you. Thanks for your interest.</p>');

@@ -241,6 +241,8 @@ input {
     input[type='submit']:hover, input[type='submit']:focus {
       outline: none;
       background: #666666; }
+    input[type='submit'].error {
+      background-color: #ef3e42 !important; }
   input.email {
     background: none;
     border: none;
@@ -252,17 +254,12 @@ input {
     color: #444; }
     input.email:hover, input.email:focus {
       border-bottom-color: #aaa; }
+    input.email.error {
+      border-bottom-color: #ef3e42 !important; }
   input.placeholder {
     color: #bbb; }
   input + input {
     margin-left: 10px; }
-
-form p.error input[type='text'] {
-  border-bottom-color: #ef3e42 !important; }
-form p.error input[type='email'] {
-  border-bottom-color: #ef3e42 !important; }
-form p.error input[type='submit'] {
-  background-color: #ef3e42 !important; }
 
 /* Some extra media queries  */
 @media screen and (max-width: 800px) {
