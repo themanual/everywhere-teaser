@@ -44,7 +44,7 @@ $("[data-placeholder]").each(function() {
           // Remove the animations
           timeout = window.setTimeout(function() {
             $inputs.removeClass("shake error");
-          }, 1100);
+          }, 900);
 
         } else { // 200
           $form.find("p").hide();
