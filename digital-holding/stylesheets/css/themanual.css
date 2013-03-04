@@ -154,25 +154,19 @@ strong {
     margin-top: 0; }
   .no-multiplebgs #illustration {
     background: url("../../img/compositions/desktop.png") bottom center; }
-
-.touch #illustration {
-  /* PHONE ILLUSTRATIONS */
-  /* TABLET ILLUSTRATIONS */ }
   @media screen and (orientation: portrait) {
     .touch #illustration {
       height: 43%; } }
-  @media screen and (orientation: portrait) and (max-width: 550px) {
+  @media (orientation: portrait) and (max-width: 550px), (orientation: landscape) and (max-height: 550px) {
     .touch #illustration {
-      background-image: url("../../img/compositions/phone/blue.png"), url("../../img/compositions/phone/yellow.png"), url("../../img/compositions/phone/red.png"); } }
-  @media screen and (orientation: landscape) and (max-height: 550px) {
+      background-image: url("../../img/compositions/phone/blue.png"), url("../../img/compositions/phone/yellow.png"), url("../../img/compositions/phone/red.png"); }
+    .no-multiplebgs.touch #illustration {
+      background: url("../../img/compositions/phone.png") bottom center; } }
+  @media (orientation: portrait) and (min-width: 551px), (orientation: landscape) and (min-height: 551px) {
     .touch #illustration {
-      background-image: url("../../img/compositions/phone/blue.png"), url("../../img/compositions/phone/yellow.png"), url("../../img/compositions/phone/red.png"); } }
-  @media screen and (orientation: portrait) and (min-width: 551px) {
-    .touch #illustration {
-      background-image: url("../../img/compositions/tablet/blue.png"), url("../../img/compositions/tablet/yellow.png"), url("../../img/compositions/tablet/red.png"); } }
-  @media screen and (orientation: landscape) and (min-height: 551px) {
-    .touch #illustration {
-      background-image: url("../../img/compositions/tablet/blue.png"), url("../../img/compositions/tablet/yellow.png"), url("../../img/compositions/tablet/red.png"); } }
+      background-image: url("../../img/compositions/tablet/blue.png"), url("../../img/compositions/tablet/yellow.png"), url("../../img/compositions/tablet/red.png"); }
+    .no-multiplebgs.touch #illustration {
+      background: url("../../img/compositions/tablet.png") bottom center; } }
 
 /* LAYOUT */
 body > main {

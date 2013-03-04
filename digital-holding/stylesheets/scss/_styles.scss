@@ -59,31 +59,42 @@ strong {
   
   @include background-layers(desktop);
 
-  .no-backgroundsize & {
-    margin-top: 0;
+  .no-backgroundsize  & { margin-top: 0; }
+  .no-multiplebgs     & { background: url('../../img/compositions/desktop.png') bottom center; }
+ 
+  .touch & {
+    @media screen and (orientation: portrait) {
+      height: 43%;
+    }
   }
 
-  .no-multiplebgs & {
-    background: url('../../img/compositions/desktop.png') bottom center;
+  // Phone
+  @media (orientation:portrait)  and (max-width:  550px),
+         (orientation:landscape) and (max-height: 550px) { 
+
+    .touch & {
+      @include background-layers(phone);
+    }
+
+    .no-multiplebgs.touch & {
+      background: url('../../img/compositions/phone.png') bottom center;
+    }
   }
+
+  // Tablet
+  @media (orientation:portrait)  and (min-width:  551px),
+         (orientation:landscape) and (min-height: 551px) { 
+
+    .touch & {
+      @include background-layers(tablet);
+    }
+
+    .no-multiplebgs.touch & {
+      background: url('../../img/compositions/tablet.png') bottom center;
+    }
+  }
+
 }
-
-.touch #illustration {
-  
-  @media screen and (orientation: portrait) {
-    height: 43%;
-  }
-
-  /* PHONE ILLUSTRATIONS */
-  @media screen and (orientation:portrait)  and (max-width:  550px) { @include background-layers(phone); }
-  @media screen and (orientation:landscape) and (max-height: 550px) { @include background-layers(phone); }
-  
-  /* TABLET ILLUSTRATIONS */
-  @media screen and (orientation:portrait)  and (min-width:  551px) { @include background-layers(tablet); }
-  @media screen and (orientation:landscape) and (min-height: 551px) { @include background-layers(tablet); }
-}
-
-
 
 
 /* LAYOUT */
