@@ -148,15 +148,15 @@ strong {
   height: 60%;
   background-size: auto 100%;
   background-repeat: repeat-x;
-  background-position: 190% 0, -240% 0, 110% 0;
+  background-position: -10% 0, -50% 0, 20% 0;
   background-image: url("../../img/compositions/desktop/blue.png"), url("../../img/compositions/desktop/yellow.png"), url("../../img/compositions/desktop/red.png"); }
   .no-backgroundsize #illustration {
     margin-top: 0; }
   .no-multiplebgs #illustration {
     background: url("../../img/compositions/desktop.png") bottom center; }
-  @media screen and (orientation: portrait) {
+  @media (orientation: portrait) {
     .touch #illustration {
-      height: 43%; } }
+      height: 47%; } }
   @media (orientation: portrait) and (max-width: 550px), (orientation: landscape) and (max-height: 550px) {
     .touch #illustration {
       background-image: url("../../img/compositions/phone/blue.png"), url("../../img/compositions/phone/yellow.png"), url("../../img/compositions/phone/red.png"); }

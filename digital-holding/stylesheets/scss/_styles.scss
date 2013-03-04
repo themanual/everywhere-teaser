@@ -53,9 +53,9 @@ strong {
   background-size: auto 100%;
   background-repeat: repeat-x;
 
-  background-position:   190% 0,
-                        -240% 0,
-                         110% 0;
+  background-position:   -10% 0,
+                        -50% 0,
+                         20% 0;
   
   @include background-layers(desktop);
 
@@ -63,8 +63,8 @@ strong {
   .no-multiplebgs     & { background: url('../../img/compositions/desktop.png') bottom center; }
  
   .touch & {
-    @media screen and (orientation: portrait) {
-      height: 43%;
+    @media (orientation: portrait) {
+      height: 47%;
     }
   }
 
